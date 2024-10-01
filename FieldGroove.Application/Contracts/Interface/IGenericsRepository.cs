@@ -10,13 +10,13 @@ namespace FieldGroove.Application.Contracts.Interface
     {
         Task<IEnumerable<T>> GetAll();
 
-        Task<T> GetById(Guid id);
+        Task<T> GetById(int id);
 
         Task Add(T entity);
 
         Task Update(T entity);
 
-        Task Delete(Guid id);
+        Task Delete(int id);
 
     }
 }

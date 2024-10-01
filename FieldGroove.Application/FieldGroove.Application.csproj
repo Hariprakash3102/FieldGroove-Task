@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\FieldGroove.Domain\FieldGroove.Domain.csproj" />
+  </ItemGroup>
+
 </Project>

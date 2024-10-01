@@ -1,3 +1,267 @@
 ﻿@model RegisterModel
 
+<div>
+    <div class="container">
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-light bg-white">
+                <a class="navbar-brand" href="#"><img src="./Assets/Images/Fieldgroove-logo.png" /></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse " id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item mx-2">
+                            <a class="nav-link active" aria-current="page" href="#home">FEATURES</a>
+                        </li>
+                        <li class="nav-item dropdown mx-2">
+                            <a class="nav-link dropdown-toggle " href="#" id="industriesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                INDUSTRIES
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="industriesDropdown">
+                                <li><a class="dropdown-item text-capitalize" href="#flooring">FLOORING</a></li>
+                                <li><a class="dropdown-item text-capitalize" href="#roofing">ROOFING</a></li>
+                                <li><a class="dropdown-item text-capitalize" href="#drywall">GRYWALL</a></li>
+                                <li><a class="dropdown-item text-capitalize " href="#insulation">INSULATION</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item mx-2">
+                            <a class="nav-link" href="#services">FAQS</a>
+                        </li>
+                        <li class="nav-item mx-2">
+                            <a class="nav-link" href="#contact">CONTACT US</a>
+                        </li>
+                        <li class="nav-item mx-2">
+                            <a class="nav-link " href="#contact">LOGIN</a>
+                        </li>
 
+                    </ul>
+                    <div class="d-flex">
+                        <button class="btn btn-outline-primary mx-2 rounded-pill ">SIGN UP</button>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <div class="text-center">
+            <p class="display-5 py-4 mt-4">Try FieldGroove Free for 7 Days! </p>
+        </div>
+        
+        <div>
+            <div class="row m-0 p-0 justify-content-center">
+                <div class="col-3 p-4 bg-secondary">
+                    <form method="post" class="vstack gap-3 py-3">
+                        <div class="text-decoration-underline text-white">Account Info</div>
+
+                        <div>
+                            <label asp-for="@Model.FirstName" class="form-label text-white">First Name* </label>
+                            <input type="text" asp-for="@Model.FirstName" class="form-control shadow-none border-dark" />
+                            <span asp-validation-for="@Model.FirstName" class="text-danger" />
+                        </div>
+
+                        <div>
+                            <label asp-for="@Model.LastName" class="form-label text-white">Last Name* </label>
+                            <input type="text" asp-for="@Model.LastName" class="form-control shadow-none border-dark" />
+                            <span asp-validation-for="@Model.LastName" class="text-danger" />
+                        </div>
+
+                        <div>
+                            <label asp-for="@Model.CompanyName" class="form-label text-white">Company Name* </label>
+                            <input type="text" asp-for="@Model.CompanyName" class="form-control shadow-none border-dark" />
+                            <span asp-validation-for="@Model.CompanyName" class="text-danger" />
+                        </div>
+
+                        <div>
+                            <label asp-for="@Model.Phone" class="form-label text-white">Phone* </label>
+                            <input type="text" asp-for="@Model.Phone" class="form-control shadow-none border-dark" />
+                            <span asp-validation-for="@Model.Phone" class="text-danger" />
+                        </div>
+
+                        <div>
+                            <label asp-for="@Model.Email" class="form-label text-white">Email* </label>
+                            <input type="text" asp-for="@Model.Email" class="form-control shadow-none border-dark" />
+                            <span asp-validation-for="@Model.Email" class="text-danger" />
+                        </div>
+
+                        <div>
+                            <label asp-for="@Model.Password" class=" form-label text-white">Password* </label>
+                            <input type="text" asp-for="@Model.Password" class="form-control shadow-none border-dark" />
+                            <span asp-validation-for="@Model.Password" class="text-danger" />
+                        </div>
+
+                        <div>
+                            <label asp-for="@Model.PasswordAgain" class="form-label text-white">Password Again* </label>
+                            <input type="text" asp-for="@Model.Password" class="form-control shadow-none border-dark" />
+                            <span asp-validation-for="@Model.FirstName" class="text-danger" />
+                        </div>
+
+                        <div>
+                            <label asp-for="@Model.TimeZone" class=" form-label text-white">Time Zone* </label>
+                            <select asp-for="@Model.TimeZone" class="form-control shadow-none border-dark">
+                                <option value="">-- Select Time Zone --</option>
+                                <option value="EST">Eastern Standard Time (EST)</option>
+                                <option value="CST">Central Standard Time (CST)</option>
+                                <option value="MST">Mountain Standard Time (MST)</option>
+                                <option value="PST">Pacific Standard Time (PST)</option>
+                            </select>
+                            <span asp-validation-for="@Model.TimeZone" class="text-danger"></span>
+                        </div>
+                        <div class="text-end">
+                            <button type="submit" class="btn btn-warning rounded shadow-none">Next</button>
+                        </div> 
+                    </form>
+                </div>
+                <div class="col-6 bg-light pt-5 ps-5">
+                    <h5>SIGN UP NOW TO START YOUR FREE TRIAL</h5>
+                    <p>FieldGroove empowers you to manage every aspect of your contracting business anytime, anywhere, and from any device.
+                        Enjoy a free trial where you can experience everything FieldGroove has to offer, including:</p>
+                    <ul class="custom-list">
+                        <li>
+                            Monitoring pipeline and backlog numbers, in real time
+                        </li>
+                        <li>
+                            Building estimates for your prospects to review and accept via email or on the job site
+                        </li>
+                        <li>
+                            Keeping close track of your team, equipment, inventory, and jobs
+                        </li>
+                        <li>
+                            Automating scheduling and dispatching
+                        </li>
+                        <li>
+                            Preparing work orders and load tickets with one click
+                        </li>
+                    </ul>
+                </div>
+            </div> 
+        </div> 
+        
+        <div class="text-center">
+            <h3>Frequently Asked Questions</h3> 
+        </div>
+
+        <div>
+            <div class="row m-0 p-0 justify-content-center">
+                <div class="col-4">
+                    <h5>Will my card on file be charged?</h5>
+                </div>
+                <div class="col-4">
+                    <h5>Can I cancel my free trial at any time?</h5>
+                </div>
+            </div>
+            <div class="row m-0 p-0 justify-content-center">
+                <div class="col-4">
+                    <p>We don’t charge anything at all before or during the trial period. The card on file is simply so we know you’re a person, not a robot.</p>
+                    <hr />
+                </div>
+                <div class="col-4">
+                    <p>Absolutely. All we ask is that you give FieldGroove a fair shot, because it is rare that we can’t improve your business!</p>
+                    <hr />
+                </div> 
+            </div>
+
+            <div class="row m-0 p-0 justify-content-center">
+                <div class="col-4">
+                    <h5>How long is my free trial? </h5>
+                </div>
+                <div class="col-4">
+                    <h5>Can I change or cancel my plan later on?</h5>
+                </div>
+            </div>
+            <div class="row m-0 p-0 justify-content-center">
+                <div class="col-4">
+                    <p>The free trial is for 7 days.</p>
+                    <hr />
+                </div>
+                <div class="col-4">
+                    <p>We have several resources (documents and videos) for training.
+                        The portal has a button you can click to send instant questions, and you will be assigned a personal point of contact who will be available to assist as needed.</p>
+                    <hr />
+                </div>
+            </div>
+
+            <div class="row m-0 p-0 justify-content-center">
+                <div class="col-4">
+                    <h5>Do you have customer representatives to answer questions during my trial?</h5>
+                </div>
+                <div class="col-4">
+                    <h5>What happens after my trial ends?</h5>
+                </div>
+            </div>
+            <div class="row m-0 p-0 justify-content-center">
+                <div class="col-4">
+                    <p>We have several resources (documents and videos) for training.
+                        The portal has a button you can click to send instant questions, and you will be assigned a personal point of contact who will be available to assist as needed.</p>
+                    <hr />
+                </div>
+                <div class="col-4">
+                    <p>Typically, you’ll find that you can’t live without us!  Before the end of the trial, we will be providing you with a quote for continuing the subscription.
+                        We will also be working closely with you toward a seamless transition.  After the initial 7 days trial, with your acceptance of our quote and your approval, we will start charging for the monthly subscription.
+                        We will provide you with all the tools necessary for on-boarding as well.</p>
+                    <hr />
+                </div>
+            </div>
+
+        </div>
+
+        <div>
+            <div class="row m-0 p-0 justify-content-center">
+                <div class="col-1" style="width: 120px;">
+                    FEATURES
+                    <span class="ps-3 ">|</span>
+                </div>
+                
+                <div class="col-1" style="width: 90px;">
+                    FAQS
+                    <span class="ps-3 ">|</span>
+                </div>
+                
+                <div class="col-1" style="width: 150px;" >
+                    CONTACT US
+                    <span class="ps-3 ">|</span>
+                </div>
+                
+                <div class="col-1" style="width: 120px;">
+                    SIGN UP
+                   
+                </div>
+                
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="row m-0 p-0 justify-content-between">
+                <div class="col-3">
+                    <div>
+                        <img src="~/Assets/Images/Fieldgroove-logo.png" alt="logo" />
+                        <div>
+                            <p>Copyright © FieldGroove, LLC 2019. All Rights Reserved. </p>
+                            
+                        </div>
+                        <div>
+                            <p>716 Newman Springs Road, Suite 307 Lincroft, NJ 07738 </p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3 align-items-center">
+                    <div>
+                       
+                        <div>
+                            <p>We would love to show you the power of FieldGroove. To setup  </p>
+
+                        </div>
+                        <div>
+                            <p>We would love to show you the power of FieldGroove. To setup  </p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+</div>
