@@ -27,3 +27,53 @@ html {
      padding-left: 35px;
      margin-bottom: 10px;
 }
+
+.bgColor {
+    position: relative;
+    background-color: #162647;
+}
+
+.orgBgColor {
+    background-color: #f3554e;
+}
+
+.orgColor {
+    color: #f3554e;
+}
+
+.arrow {
+    position: absolute;
+    top: 50px;
+    right: -10px;
+    width: 0;
+    height: 0;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-left: 15px solid #162647;
+}
+
+.signbtn {
+    background-color: #2d59b0;
+    color : white;
+}
+
+    .signbtn:hover {
+        background-color: #f3554e;
+        color : white;
+    }
+
+.m2margin{
+    margin-top : 112px;
+}
+
+.m3margin{
+    margin-top : 112px;
+}
+
+.blueColor {
+    color: #2e58af;
+}
+
+.footer{
+    font-size: 12px;
+}
