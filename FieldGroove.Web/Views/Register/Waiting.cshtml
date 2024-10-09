@@ -1,0 +1,132 @@
+﻿
+
+<div class="d-flex  flex-column  min-vh-100">
+    <div class="container  flex-grow-1">
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-light bg-white">
+                <a class="navbar-brand" href="#"><img src="~/Assets/Images/Fieldgroove-logo.png" /></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse headerFont " id="navbarNav">
+                    <ul class="navbar-nav ms-auto ">
+                        <li class="nav-item mx-2">
+                            <a class="nav-link active color" aria-current="page" href="#home">FEATURES</a>
+                        </li>
+                        <li class="nav-item dropdown mx-2">
+                            <a class="nav-link dropdown-toggle color" href="#" id="industriesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                INDUSTRIES
+                            </a>
+                            <ul class="dropdown-menu bgColor" aria-labelledby="industriesDropdown" style="font-size:12px;">
+                                <li><a class="dropdown-item text-capitalize text-white" href="#flooring">FLOORING</a></li>
+                                <li><a class="dropdown-item text-capitalize text-white" href="#roofing">ROOFING</a></li>
+                                <li><a class="dropdown-item text-capitalize text-white" href="#drywall">GRYWALL</a></li>
+                                <li><a class="dropdown-item text-capitalize text-white" href="#insulation">INSULATION</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item mx-2">
+                            <a class="nav-link color" href="#services">FAQS</a>
+                        </li>
+                        <li class="nav-item mx-2">
+                            <a class="nav-link color" href="#contact">CONTACT US</a>
+                        </li>
+                        <li class="nav-item mx-2">
+                            <a class="nav-link color " asp-controller="Login" asp-action="Login">LOGIN</a>
+                        </li>
+
+                    </ul>
+                    <div class="d-flex">
+                        <a asp-controller="Register" asp-action="Register" class="btn btn signbtn text-decoration-none mx-2 rounded-pill" style="box-shadow:none;">SIGN UP</a>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <div class="my-5">
+            <div class="row m-0 p-0">
+                <div class="d-flex justify-content-center bg-secondary bg-opacity-10 align-items-center" style="height:300px;">
+                    <div class="text-center">
+                        <h3 class="orgColor mb-4">Thank you for signing up!</h3>
+                        <h6>Just one more step. <br /></h6>
+                        <h6>A validation email was just sent to you.  <br /></h6>
+                        <h6>Please click the link in the email to activate your account and login.</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+    <div>
+
+        <div class="row m-0 p-0 mb-3 justify-content-center headerFont">
+            <a class="col-1 text-decoration-none color" style="width: 125px;">
+                FEATURES
+                <span class="ps-3 ">|</span>
+            </a>
+
+            <a class="col-1 text-decoration-none color" style="width: 90px;">
+                FAQS
+                <span class="ps-3 ">|</span>
+            </a>
+
+            <a class="col-1 text-decoration-none color" style="width: 145px;">
+                CONTACT US
+                <span class="ps-3 ">|</span>
+            </a>
+
+            <a asp-controller="Login" asp-action="Login" class="col-1 text-decoration-none color" style="width: 100px;">
+                LOGIN
+                <span class="ps-3 ">|</span>
+            </a>
+
+            <a asp-controller="Register" asp-action="Register" class="col-1 text-decoration-none color" style="width: 120px;">
+                SIGN UP
+            </a>
+        </div>
+
+        <footer class="bgColor d-flex align-items-center " style="height: 250px;">
+            <div class="container">
+                <div class="row m-0 p-0 justify-content-between  text-white">
+                    <div class="col-4 footer">
+                        <div>
+                            <img src="~/Assets/Images/white-logo.jpg" alt="logo" />
+                            <div class="mt-2">
+                                <p>Copyright © FieldGroove, LLC 2019. All Rights Reserved. </p>
+
+                            </div>
+                            <div>
+                                <p>716 Newman Springs Road, Suite 307 Lincroft, NJ 07738 </p>
+
+                            </div>
+                            <div>
+                                <p class="orgColor">Privacy Policy</p>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-4 mt-5 align-items-center footer">
+                        <div>
+
+                            <div>
+                                <p>We would love to show you the power of FieldGroove. To setup  </p>
+
+                            </div>
+                            <div>
+                                <p>a demo or get an accorgount setup, please contact us at</p>
+                            </div>
+                            <div>
+                                <p><span class="orgColor">sales@fieldgroove.com</span> or by phone at <span class="orgColor">212-537-0218</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+
+
+</div>

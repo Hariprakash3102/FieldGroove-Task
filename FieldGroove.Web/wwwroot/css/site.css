@@ -13,22 +13,26 @@ html {
 }
 
 .custom-list {
-    list-style-type: none; 
+    list-style-type: none;
     padding-left: 0;
 }
 
-.custom-list li {
-     background: url('../Assets/Images/List-img.jpg'); 
-     background-repeat: no-repeat;
-     background-position: 0 0; 
-     background-size: 30px 30px; 
-     padding-left: 35px;
-     margin-bottom: 10px;
-}
+    .custom-list li {
+        background: url('../Assets/Images/List-img.jpg');
+        background-repeat: no-repeat;
+        background-position: 0 0;
+        background-size: 30px 30px;
+        padding-left: 35px;
+        margin-bottom: 10px;
+    }
 
 .bgColor {
     position: relative;
     background-color: #162647;
+}
+
+.color {
+    color: #162250;
 }
 
 .orgBgColor {
@@ -52,34 +56,46 @@ html {
 
 .signbtn {
     background-color: #2d59b0;
-    color : white;
+    color: white;
 }
 
     .signbtn:hover {
         background-color: #f3554e;
-        color : white;
+        color: white;
     }
 
-.m2margin{
-    margin-top : 112px;
+.m2margin {
+    margin-top: 105px;
 }
 
-.m3margin{
-    margin-top : 112px;
+.m3margin {
+    margin-top: 112px;
 }
 
 .blueColor {
     color: #2e58af;
 }
 
-.footer{
+.footer {
     font-size: 12px;
 }
 
 .headerFont {
     font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;
-    font-weight: 600;
+    font-weight: 700;
     font-style: normal;
-    font-size: 12px;
+    font-size: 14px;
+}
+
+.textJustify {
+    text-align: justify-all;
+}
+
+a:hover {
+    color: #f3554e;
+}
+
+nav:hover {
+    color: #f3554e;
 }

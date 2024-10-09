@@ -1,10 +1,19 @@
-﻿using FieldGroove.Domain.Models;
+﻿using FieldGroove.Application.Contracts.Interface;
+using FieldGroove.Domain.Models;
+using FieldGroove.Infrastructure.Repositories;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FieldGroove.Web.Controllers
 {
     public class RegisterController : Controller
     {
+        private readonly IUnitOfWork unitOfWork;
+
+        public RegisterController(IUnitOfWork unitOfWork)
+        {
+            this.unitOfWork = unitOfWork;
+        }
+
         [HttpGet]
         public IActionResult Register()
         {
@@ -12,9 +21,21 @@ namespace FieldGroove.Web.Controllers
         }
 
         [HttpPost]
-        public IActionResult Register(RegisterModel model)
+        public async Task<IActionResult> Register(RegisterModel model)
         {
-          return View(model);
+            if (ModelState.IsValid)
+            {
+                await unitOfWork.Register.Add(model);
+                await unitOfWork.Save();
+                return RedirectToAction("Waiting");
+            }
+            return View();
+        }
+
+        [HttpGet]
+        public IActionResult Waiting()
+        {
+            return View();
         }
     }
 }

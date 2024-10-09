@@ -1,155 +1,138 @@
 ﻿@model LoginModel
 
-<div>
+<div class="d-flex  flex-column  min-vh-100">
+    <!-- New container with flexbox properties -->
     <div class="container">
+        <!-- Added flex-grow-1 to make the main content take remaining space -->
         <header>
             <nav class="navbar navbar-expand-lg navbar-light bg-white">
-                <a class="navbar-brand" href="#"><img src="./Assets/Images/Fieldgroove-logo.png" /></a>
+                <a class="navbar-brand" href="#"><img src="~/Assets/Images/Fieldgroove-logo.png" /></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse " id="navbarNav">
-                    <ul class="navbar-nav ms-auto headerFont">
+                <div class="collapse navbar-collapse headerFont " id="navbarNav">
+                    <ul class="navbar-nav ms-auto ">
                         <li class="nav-item mx-2">
-                            <a class="nav-link active" aria-current="page" href="#home">FEATURES</a>
+                            <a class="nav-link active color" aria-current="page" href="#home">FEATURES</a>
                         </li>
                         <li class="nav-item dropdown mx-2">
-                            <a class="nav-link dropdown-toggle " href="#" id="industriesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle color" href="#" id="industriesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 INDUSTRIES
                             </a>
-                            <ul class="dropdown-menu" aria-labelledby="industriesDropdown">
-                                <li><a class="dropdown-item text-capitalize" href="#flooring">FLOORING</a></li>
-                                <li><a class="dropdown-item text-capitalize" href="#roofing">ROOFING</a></li>
-                                <li><a class="dropdown-item text-capitalize" href="#drywall">GRYWALL</a></li>
-                                <li><a class="dropdown-item text-capitalize " href="#insulation">INSULATION</a></li>
+                            <ul class="dropdown-menu bgColor" aria-labelledby="industriesDropdown" style="font-size:12px;">
+                                <li><a class="dropdown-item text-capitalize text-white" href="#flooring">FLOORING</a></li>
+                                <li><a class="dropdown-item text-capitalize text-white" href="#roofing">ROOFING</a></li>
+                                <li><a class="dropdown-item text-capitalize text-white" href="#drywall">GRYWALL</a></li>
+                                <li><a class="dropdown-item text-capitalize text-white" href="#insulation">INSULATION</a></li>
                             </ul>
                         </li>
                         <li class="nav-item mx-2">
-                            <a class="nav-link" href="#services">FAQS</a>
+                            <a class="nav-link color" href="#services">FAQS</a>
                         </li>
                         <li class="nav-item mx-2">
-                            <a class="nav-link" href="#contact">CONTACT US</a>
+                            <a class="nav-link color" href="#contact">CONTACT US</a>
                         </li>
                         <li class="nav-item mx-2">
-                            <a class="nav-link " href="#contact">LOGIN</a>
+                            <a class="nav-link color "  asp-controller="Register" asp-action="Register" >SIGN UP</a>
                         </li>
 
                     </ul>
                     <div class="d-flex">
-                        <button class="btn signbtn  mx-2 rounded-pill ">SIGN UP</button>
+                        <a asp-controller="Login" asp-action="Login" class="btn signbtn text-decoration-none mx-2 rounded-pill " style="box-shadow:none;">LOGIN</a>
                     </div>
                 </div>
             </nav>
         </header>
 
+        <!-- Main Content -->
         <div>
             <div class="row m-0 p-0 justify-content-center mt-3">
                 <div class="col-4 p-4 bgColor position-relative">
                     <form method="post" class="vstack gap-3 py-3">
                         <div class="text-decoration-underline text-white">Account Info</div>
-
                         <div>
                             <label asp-for="@Model.Email" class="form-label text-white">UserName* </label>
                             <input type="text" asp-for="@Model.Email" class="form-control shadow-none border-dark" />
-                            <span asp-validation-for="@Model.Email" class="text-danger" />
                         </div>
-
                         <div>
-                            <label asp-for="@Model.Password" class=" form-label text-white">Password* </label>
+                            <label asp-for="@Model.Password" class="form-label text-white">Password* </label>
                             <input type="text" asp-for="@Model.Password" class="form-control shadow-none border-dark" />
-                            <span asp-validation-for="@Model.Password" class="text-danger" />
                         </div>
-
                         <div>
-                            <input type="checkbox" class="form-check-input shadow-none" />
+                            <input asp-for="@Model.RememberMe" type="checkbox" class="form-check-input shadow-none" />
                             <label asp-for="@Model.RememberMe" class="form-check-label text-white">Remember me</label>
                         </div>
-
                         <div class="row justify-content-between m-0 p-0">
-                            <button type="button" class="col-6 btn btn-outline-secondary" >Forget Password? </button>
-                            <button type="submit" class="col-4 btn orgBgColor text-white rounded shadow-none ">Next</button>
+                            <button type="button" class="col-6 btn btn-outline-secondary">Forget Password? </button>
+                            <button type="submit" class="col-4 btn orgBgColor text-white rounded shadow-none">Next</button>
                         </div>
-                        <div class=" position-absolute arrow">
-                        </div>
+                        <div class="position-absolute arrow"></div>
                     </form>
                 </div>
 
                 <div class="col-6 bg-light pt-5 ps-5">
+                    <div asp-validation-summary="All" class="text-danger"></div>
                     <h5 class="orgColor">NEED AN ACCOUNT?</h5>
-                    <p>
-                        Create an account to start managing<br />
-                        your company. Click the "Create New Account" <br />
-                        button below to get started
-                    </p>
+                    <p>Create an account to start managing<br />your company. Click the "Create New Account" <br />button below to get started</p>
                     <div>
                         <a asp-controller="Register" asp-action="Register" class="btn bgColor text-white">Create New Account</a>
                     </div>
                 </div>
             </div>
         </div>
-        <div>
-            <div class="row m-0 p-0 my-3 justify-content-center headerFont " style="color: #162647;">
-                <div class="col-1" style="width: 125px;">
-                    FEATURES
-                    <span class="ps-3 ">|</span>
-                </div>
 
-                <div class="col-1" style="width: 90px;">
-                    FAQS
-                    <span class="ps-3 ">|</span>
-                </div>
-
-                <div class="col-1" style="width: 150px;">
-                    CONTACT US
-                    <span class="ps-3 ">|</span>
-                </div>
-
-                <div class="col-1" style="width: 100px;">
-                    LOGIN
-                    <span class="ps-3 ">|</span>
-                </div>
-
-                <div class="col-1" style="width: 120px;">
-                    SIGN UP
-                </div>
-            </div>
-        </div>
     </div>
 
-    <footer class="bgColor d-flex align-items-center " style="height: 250px;">
+    <!-- Footer -->
+    <div class="row m-0 p-0 my-3 justify-content-center headerFont mt-auto" style="color: #162647;">
+        <a class="col-1 text-decoration-none color" style="width: 125px;">
+            FEATURES
+            <span class="ps-3 ">|</span>
+        </a>
+
+        <a class="col-1 text-decoration-none color" style="width: 90px;">
+            FAQS
+            <span class="ps-3 ">|</span>
+        </a>
+
+        <a class="col-1 text-decoration-none color" style="width: 145px;">
+            CONTACT US
+            <span class="ps-3 ">|</span>
+        </a>
+
+        <a asp-controller="Login" asp-action="Login" class="col-1 text-decoration-none color" style="width: 100px;">
+            LOGIN
+            <span class="ps-3 ">|</span>
+        </a>
+
+        <a asp-controller="Register" asp-action="Register" class="col-1 text-decoration-none color" style="width: 120px;">
+            SIGN UP
+        </a>
+    </div>
+    <footer class="bgColor d-flex align-items-center" style="height: 250px;">
+        <!-- Footer placed at the bottom -->
         <div class="container">
-            <div class="row m-0 p-0 justify-content-between  text-white">
+            <div class="row m-0 p-0 justify-content-evenly text-white">
                 <div class="col-4 footer">
                     <div>
                         <img src="~/Assets/Images/white-logo.jpg" alt="logo" />
-                        <div class="mt-2">
-                            <p>Copyright © FieldGroove, LLC 2019. All Rights Reserved. </p>
-
+                        <div class="mt-4">
+                            <p>Copyright © FieldGroove, LLC 2019. All Rights Reserved.</p>
                         </div>
                         <div>
-                            <p>716 Newman Springs Road, Suite 307 Lincroft, NJ 07738 </p>
-
+                            <p>716 Newman Springs Road, Suite 307 Lincroft, NJ 07738</p>
                         </div>
                         <div>
                             <p class="orgColor">Privacy Policy</p>
                         </div>
-
                     </div>
                 </div>
-                <div class="col-4 mt-5 align-items-center footer">
+                <div class="col-4 ms-5 d-flex align-items-center footer">
                     <div>
-
-                        <div>
-                            <p>We would love to show you the power of FieldGroove. To setup  </p>
-
-                        </div>
-                        <div>
-                            <p>a demo or get an accorgount setup, please contact us at</p>
-                        </div>
-                        <div>
-                            <p><span class="orgColor">sales@fieldgroove.com</span> or by phone at <span class="orgColor">212-537-0218</span></p>
-                        </div>
+                        <p>We would love to show you the power of FieldGroove. To setup</p>
+                        <p>a demo or get an account setup, please contact us at</p>
+                        <p><span class="orgColor">sales@fieldgroove.com</span> or by phone at <span class="orgColor">212-537-0218</span></p>
                     </div>
                 </div>
             </div>

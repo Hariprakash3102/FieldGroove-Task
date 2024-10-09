@@ -1,7 +1,10 @@
 using FieldGroove.Application.Contracts.Interface;
 using FieldGroove.Infrastructure.Common;
 using FieldGroove.Infrastructure.Repositories;
+using FluentValidation.AspNetCore;
+using FluentValidation;
 using Microsoft.EntityFrameworkCore;
+using FieldGroove.Domain.Validator;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,11 +14,15 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<FieldDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("FieldGroove")));
 
-builder.Services.AddScoped(typeof(IGenericsRepository<>), typeof(GenericsRepository<>));
+builder.Services.AddFluentValidationAutoValidation()
+    .AddFluentValidationClientsideAdapters()
+    .AddValidatorsFromAssemblyContaining<RegisterValidator>();
 
+
+builder.Services.AddTransient(typeof(IGenericsRepository<>), typeof(GenericsRepository<>));
+builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped<IRegisterRepository, RegistorRepository>();
 
-builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
 var app = builder.Build();
 
@@ -38,6 +45,6 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Login}/{action=Login}/{id?}");
+    pattern: "{controller=Register}/{action=Waiting}/{id?}");
 
 app.Run();

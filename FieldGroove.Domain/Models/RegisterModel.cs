@@ -1,5 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema; 
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace FieldGroove.Domain.Models;
 
@@ -23,5 +23,15 @@ public class RegisterModel
     public string? PasswordAgain { get; set; }
 
     public string? TimeZone { get; set; }
+
+    public string? StreetAddress1 { get; set; }
+
+    public string? StreetAddress2 { get; set; }
+
+    public string? City { get; set; }
+
+    public string? State { get; set; }
+
+    public long? Zip { get; set; }
 }
 

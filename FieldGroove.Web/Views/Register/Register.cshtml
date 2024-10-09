@@ -4,40 +4,40 @@
     <div class="container">
         <header>
             <nav class="navbar navbar-expand-lg navbar-light bg-white">
-                <a class="navbar-brand" href="#"><img src="./Assets/Images/Fieldgroove-logo.png" /></a>
+                <a class="navbar-brand" href="#"><img src="~/Assets/Images/Fieldgroove-logo.png" /></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse headerFont " id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
+                    <ul class="navbar-nav ms-auto ">
                         <li class="nav-item mx-2">
-                            <a class="nav-link active" aria-current="page" href="#home">FEATURES</a>
+                            <a class="nav-link active color" aria-current="page" href="#home">FEATURES</a>
                         </li>
                         <li class="nav-item dropdown mx-2">
-                            <a class="nav-link dropdown-toggle " href="#" id="industriesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle color" href="#" id="industriesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 INDUSTRIES
                             </a>
-                            <ul class="dropdown-menu" aria-labelledby="industriesDropdown">
-                                <li><a class="dropdown-item text-capitalize" href="#flooring">FLOORING</a></li>
-                                <li><a class="dropdown-item text-capitalize" href="#roofing">ROOFING</a></li>
-                                <li><a class="dropdown-item text-capitalize" href="#drywall">GRYWALL</a></li>
-                                <li><a class="dropdown-item text-capitalize " href="#insulation">INSULATION</a></li>
+                            <ul class="dropdown-menu bgColor" aria-labelledby="industriesDropdown" style="font-size:12px;">
+                                <li><a class="dropdown-item text-capitalize text-white" href="#flooring">FLOORING</a></li>
+                                <li><a class="dropdown-item text-capitalize text-white" href="#roofing">ROOFING</a></li>
+                                <li><a class="dropdown-item text-capitalize text-white" href="#drywall">GRYWALL</a></li>
+                                <li><a class="dropdown-item text-capitalize text-white" href="#insulation">INSULATION</a></li>
                             </ul>
                         </li>
                         <li class="nav-item mx-2">
-                            <a class="nav-link" href="#services">FAQS</a>
+                            <a class="nav-link color" href="#services">FAQS</a>
                         </li>
                         <li class="nav-item mx-2">
-                            <a class="nav-link" href="#contact">CONTACT US</a>
+                            <a class="nav-link color" href="#contact">CONTACT US</a>
                         </li>
                         <li class="nav-item mx-2">
-                            <a class="nav-link " href="#contact">LOGIN</a>
+                            <a class="nav-link color " asp-controller="Login" asp-action="Login">LOGIN</a>
                         </li>
 
                     </ul>
                     <div class="d-flex">
-                        <button class="btn signbtn  mx-2 rounded-pill ">SIGN UP</button>
+                        <a asp-controller="Register" asp-action="Register" class="btn btn signbtn text-decoration-none mx-2 rounded-pill" style="box-shadow:none;">SIGN UP</a>
                     </div>
                 </div>
             </nav>
@@ -50,64 +50,100 @@
         <div>
             <div class="row m-0 p-0 justify-content-center">
                 <div class="col-4 p-4 bgColor position-relative">
+
                     <form method="post" class="vstack gap-3 py-3">
-                        <div class="text-decoration-underline text-white">Account Info</div>
+                        <!--curosole-->
+                        <div id="RegisterCurousel" class="carousel slide" data-bs-interval="false">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <div class="vstack gap-3 py-3">
 
-                        <div>
-                            <label asp-for="@Model.FirstName" class="form-label text-white">First Name* </label>
-                            <input type="text" asp-for="@Model.FirstName" class="form-control shadow-none border-dark" />
-                            <span asp-validation-for="@Model.FirstName" class="text-danger" />
-                        </div>
+                                        <div class="text-decoration-underline text-white">Account Info</div>
+                                        <div>
+                                            <label asp-for="@Model.FirstName" class="form-label text-white">First Name* </label>
+                                            <input type="text" asp-for="@Model.FirstName" class="form-control shadow-none border-dark" />
+                                        </div>
 
-                        <div>
-                            <label asp-for="@Model.LastName" class="form-label text-white">Last Name* </label>
-                            <input type="text" asp-for="@Model.LastName" class="form-control shadow-none border-dark" />
-                            <span asp-validation-for="@Model.LastName" class="text-danger" />
-                        </div>
+                                        <div>
+                                            <label asp-for="@Model.LastName" class="form-label text-white">Last Name* </label>
+                                            <input type="text" asp-for="@Model.LastName" class="form-control shadow-none border-dark" />
+                                        </div>
 
-                        <div>
-                            <label asp-for="@Model.CompanyName" class="form-label text-white">Company Name* </label>
-                            <input type="text" asp-for="@Model.CompanyName" class="form-control shadow-none border-dark" />
-                            <span asp-validation-for="@Model.CompanyName" class="text-danger" />
-                        </div>
+                                        <div>
+                                            <label asp-for="@Model.CompanyName" class="form-label text-white">Company Name* </label>
+                                            <input type="text" asp-for="@Model.CompanyName" class="form-control shadow-none border-dark" />
+                                        </div>
 
-                        <div>
-                            <label asp-for="@Model.Phone" class="form-label text-white">Phone* </label>
-                            <input type="text" asp-for="@Model.Phone" class="form-control shadow-none border-dark" />
-                            <span asp-validation-for="@Model.Phone" class="text-danger" />
-                        </div>
+                                        <div>
+                                            <label asp-for="@Model.Phone" class="form-label text-white">Phone* </label>
+                                            <input type="tel" asp-for="@Model.Phone" class="form-control shadow-none border-dark" />
+                                        </div>
 
-                        <div>
-                            <label asp-for="@Model.Email" class="form-label text-white">Email* </label>
-                            <input type="text" asp-for="@Model.Email" class="form-control shadow-none border-dark" />
-                            <span asp-validation-for="@Model.Email" class="text-danger" />
-                        </div>
+                                        <div>
+                                            <label asp-for="@Model.Email" class="form-label text-white">Email* </label>
+                                            <input type="email" asp-for="@Model.Email" class="form-control shadow-none border-dark" />
+                                        </div>
 
-                        <div>
-                            <label asp-for="@Model.Password" class=" form-label text-white">Password* </label>
-                            <input type="text" asp-for="@Model.Password" class="form-control shadow-none border-dark" />
-                            <span asp-validation-for="@Model.Password" class="text-danger" />
-                        </div>
+                                        <div>
+                                            <label asp-for="@Model.Password" class=" form-label text-white">Password* </label>
+                                            <input type="password" asp-for="@Model.Password" class="form-control shadow-none border-dark" />
+                                        </div>
 
-                        <div>
-                            <label asp-for="@Model.PasswordAgain" class="form-label text-white">Password Again* </label>
-                            <input type="text" asp-for="@Model.Password" class="form-control shadow-none border-dark" />
-                            <span asp-validation-for="@Model.FirstName" class="text-danger" />
-                        </div>
+                                        <div>
+                                            <label asp-for="@Model.PasswordAgain" class="form-label text-white">Password Again* </label>
+                                            <input type="password" asp-for="@Model.PasswordAgain" class="form-control shadow-none border-dark" />
+                                        </div>
 
-                        <div>
-                            <label asp-for="@Model.TimeZone" class=" form-label text-white">Time Zone* </label>
-                            <select asp-for="@Model.TimeZone" class="form-control shadow-none border-dark">
-                                <option value="">-- Select Time Zone --</option>
-                                <option value="EST">Eastern Standard Time</option>
-                                <option value="CST">Central Standard Time</option>
-                                <option value="MST">Mountain Standard Time</option>
-                                <option value="PST">Pacific Standard Time</option>
-                            </select>
-                            <span asp-validation-for="@Model.TimeZone" class="text-danger"></span>
-                        </div>
-                        <div class="text-end">
-                            <button type="submit" class="col-4 btn orgBgColor text-white rounded shadow-none ">Next</button>
+                                        <div>
+                                            <label asp-for="@Model.TimeZone" class=" form-label text-white">Time Zone* </label>
+                                            <select asp-for="@Model.TimeZone" class="form-control shadow-none border-dark">
+                                                <option value="">-- Select Time Zone --</option>
+                                                <option value="EST">Eastern Standard Time</option>
+                                                <option value="CST">Central Standard Time</option>
+                                                <option value="MST">Mountain Standard Time</option>
+                                                <option value="PST">Pacific Standard Time</option>
+                                            </select>
+                                        </div>
+                                        <div class="text-end">
+                                            <button class="col-4 btn orgBgColor text-white rounded shadow-none " data-bs-target="#RegisterCurousel" data-bs-slide="next">Next</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item" style="height: 798px;">
+                                    <div class="vstack gap-3 py-3">
+                                        <div class="text-decoration-underline text-white">Office Address </div>
+                                        <div>
+                                            <label asp-for="@Model.StreetAddress1" class="form-label text-white">Street Address1* </label>
+                                            <input type="text" asp-for="@Model.StreetAddress1" class="form-control shadow-none border-dark" />
+                                        </div>
+
+                                        <div>
+                                            <label asp-for="@Model.StreetAddress2" class="form-label text-white">Street Address2* </label>
+                                            <input type="text" asp-for="@Model.StreetAddress2" class="form-control shadow-none border-dark" />
+                                        </div>
+
+                                        <div>
+                                            <label asp-for="@Model.City" class="form-label text-white">City* </label>
+                                            <input type="text" asp-for="@Model.City" class="form-control shadow-none border-dark" />
+                                        </div>
+
+                                        <div>
+                                            <label asp-for="@Model.State" class="form-label text-white">State* </label>
+                                            <input type="text" asp-for="@Model.State" class="form-control shadow-none border-dark" />
+                                        </div>
+
+                                        <div>
+                                            <label asp-for="@Model.Zip" class="form-label text-white">Zip* </label>
+                                            <input type="text" asp-for="@Model.Zip" class="form-control shadow-none border-dark" />
+                                        </div>
+
+                                        <div class="d-flex justify-content-between">
+                                            <button class="col-5 btn btn-outline-secondary text-white rounded shadow-none " data-bs-target="#RegisterCurousel" data-bs-slide="prev">Back</button>
+                                            <button type="submit" class="col-5 btn orgBgColor text-white rounded shadow-none ">Sign Up</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div class=" position-absolute arrow">
                         </div>
@@ -115,10 +151,11 @@
                 </div>
 
                 <div class="col-6 bg-light pt-5 ps-5">
+                    <div asp-validation-summary="All" class="text-danger"></div>
                     <h5 class="orgColor">SIGN UP NOW TO START YOUR FREE TRIAL</h5>
                     <p>
                         FieldGroove empowers you to manage every aspect of your contracting business anytime, anywhere, and from any device.
-                        Enjoy a free trial where you can experience everything FieldGroove has to offer, including:
+                        Enjoy a free trial where you can experience everything FieldGroove has to offer,S including:
                     </p>
                     <ul class="custom-list">
                         <li>
@@ -146,7 +183,7 @@
         </div>
 
         <div class="pt-5">
-            <div class="row m-0 p-0 justify-content-center blueColor">
+            <div class="row m-0 p-0 justify-content-center textJustify blueColor">
                 <div class="col-4">
                     <h5>Will my card on file be charged?</h5>
                 </div>
@@ -176,7 +213,7 @@
             <div class="row m-0 p-0 justify-content-center">
                 <div class="col-4">
                     <p>The free trial is for 7 days.</p>
-                    <hr class="m2margin" />
+                    <hr style="margin-top:88px;" />
                 </div>
                 <div class="col-4">
                     <p>
@@ -214,32 +251,31 @@
             </div>
 
         </div>
-
         <div>
             <div class="row m-0 p-0 mb-3 justify-content-center headerFont">
-                <div class="col-1" style="width: 120px;">
+                <a class="col-1 text-decoration-none color" style="width: 125px;">
                     FEATURES
                     <span class="ps-3 ">|</span>
-                </div>
+                </a>
 
-                <div class="col-1" style="width: 90px;">
+                <a class="col-1 text-decoration-none color" style="width: 90px;">
                     FAQS
                     <span class="ps-3 ">|</span>
-                </div>
+                </a>
 
-                <div class="col-1" style="width: 150px;">
+                <a class="col-1 text-decoration-none color" style="width: 145px;">
                     CONTACT US
                     <span class="ps-3 ">|</span>
-                </div>
+                </a>
 
-                 <div class="col-1" style="width: 150px;">
-                   LOGIN
+                <a asp-controller="Login" asp-action="Login" class="col-1 text-decoration-none color" style="width: 100px;">
+                    LOGIN
                     <span class="ps-3 ">|</span>
-                </div>
+                </a>
 
-                <div class="col-1" style="width: 120px;">
+                <a asp-controller="Register" asp-action="Register" class="col-1 text-decoration-none color" style="width: 120px;">
                     SIGN UP
-                </div>
+                </a>
             </div>
         </div>
     </div>
@@ -249,7 +285,7 @@
             <div class="row m-0 p-0 justify-content-between  text-white">
                 <div class="col-4 footer">
                     <div>
-                        <img src="~/Assets/Images/white-logo.jpg" alt="logo" />
+                        <img src="./Assets/Images//white-logo.jpg" alt="logo" />
                         <div class="mt-2">
                             <p>Copyright © FieldGroove, LLC 2019. All Rights Reserved. </p>
 
@@ -259,7 +295,7 @@
 
                         </div>
                         <div>
-                            <p class="orgColor">Privacy Policy</p> 
+                            <p class="orgColor">Privacy Policy</p>
                         </div>
 
                     </div>
@@ -272,7 +308,7 @@
 
                         </div>
                         <div>
-                            <p>a demo or get an accorgount setup, please contact us at</p> 
+                            <p>a demo or get an accorgount setup, please contact us at</p>
                         </div>
                         <div>
                             <p><span class="orgColor">sales@fieldgroove.com</span> or by phone at <span class="orgColor">212-537-0218</span></p>
