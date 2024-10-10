@@ -22,11 +22,34 @@ namespace FieldGroove.Web.Controllers
         [HttpPost]
         public async Task<IActionResult> Login(LoginModel model)
         {
-            if (ModelState.IsValid)
+            // Check if the model is valid (i.e., required fields are filled)
+          if(model.Email == null)
             {
-                var Detail = await unitOfWork.Register.GetByEmail(model.Email);
+                return Json(new { success = false, message = "UserName is Required" });
             }
-            return View();
+
+            // Fetch the user by email
+            var user = await unitOfWork.Register.GetByEmail(model.Email);
+
+            // Check if the user exists
+            if (user == null)
+            {
+                return Json(new { success = false, message = "Email not found. Please register first." });
+            }
+
+            if(model.Password == null)
+            {
+                return Json(new { success = false, message = "Enter the Password, Password is Required" });
+            }
+
+            // Check if the password matches
+            if (user.Password != model.Password)
+            {
+                return Json(new { success = false, message = "Incorrect password. Please try again." });
+            }
+
+            // If everything is valid, return success
+            return Json(new { success = true, message = "Login is Successful" });
         }
     }
 }

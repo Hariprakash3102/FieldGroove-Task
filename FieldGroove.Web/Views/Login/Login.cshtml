@@ -1,4 +1,5 @@
-﻿@model LoginModel
+﻿
+@model LoginModel
 
 <div class="d-flex  flex-column  min-vh-100">
     <!-- New container with flexbox properties -->
@@ -12,7 +13,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse headerFont " id="navbarNav">
-                    <ul class="navbar-nav ms-auto ">
+                    <ul class="navbar-nav d-flex justify-content-between " style="margin-left:200px;width:600px;">
                         <li class="nav-item mx-2">
                             <a class="nav-link active color" aria-current="page" href="#home">FEATURES</a>
                         </li>
@@ -34,7 +35,7 @@
                             <a class="nav-link color" href="#contact">CONTACT US</a>
                         </li>
                         <li class="nav-item mx-2">
-                            <a class="nav-link color "  asp-controller="Register" asp-action="Register" >SIGN UP</a>
+                            <a class="nav-link color " asp-controller="Register" asp-action="Register">SIGN UP</a>
                         </li>
 
                     </ul>
@@ -49,7 +50,7 @@
         <div>
             <div class="row m-0 p-0 justify-content-center mt-3">
                 <div class="col-4 p-4 bgColor position-relative">
-                    <form method="post" class="vstack gap-3 py-3">
+                    <form method="post" id="LoginForm" class="vstack gap-3 py-3" onsubmit="return ajaxLogin()">
                         <div class="text-decoration-underline text-white">Account Info</div>
                         <div>
                             <label asp-for="@Model.Email" class="form-label text-white">UserName* </label>
@@ -57,7 +58,7 @@
                         </div>
                         <div>
                             <label asp-for="@Model.Password" class="form-label text-white">Password* </label>
-                            <input type="text" asp-for="@Model.Password" class="form-control shadow-none border-dark" />
+                            <input type="password" asp-for="@Model.Password" class="form-control shadow-none border-dark" />
                         </div>
                         <div>
                             <input asp-for="@Model.RememberMe" type="checkbox" class="form-check-input shadow-none" />
@@ -65,7 +66,7 @@
                         </div>
                         <div class="row justify-content-between m-0 p-0">
                             <button type="button" class="col-6 btn btn-outline-secondary">Forget Password? </button>
-                            <button type="submit" class="col-4 btn orgBgColor text-white rounded shadow-none">Next</button>
+                            <button type="submit" class="col-4 btn orgBgColor text-white rounded shadow-none" >Sign In></button>
                         </div>
                         <div class="position-absolute arrow"></div>
                     </form>
@@ -73,6 +74,7 @@
 
                 <div class="col-6 bg-light pt-5 ps-5">
                     <div asp-validation-summary="All" class="text-danger"></div>
+                    <div id="LoginError"></div>
                     <h5 class="orgColor">NEED AN ACCOUNT?</h5>
                     <p>Create an account to start managing<br />your company. Click the "Create New Account" <br />button below to get started</p>
                     <div>
@@ -139,3 +141,6 @@
         </div>
     </footer>
 </div>
+@section Scripts{ 
+    <script src="~/js/Login.js"></script>
+}
