@@ -9,7 +9,9 @@
             Email: email,
             Password: $('#Password', $form).val()
         }, 
-        
+        headers: {
+            "Authorization": "Bearer " + localStorage.getItem("Jwt")
+        },  
         success: function (response) {
             if (response.success) {
                 localStorage.setItem("Jwt", response.message);

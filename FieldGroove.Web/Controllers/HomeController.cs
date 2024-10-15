@@ -5,10 +5,20 @@ using System.Diagnostics;
 
 namespace FieldGroove.Web.Controllers
 {
-    [Authorize]
+    
     public class HomeController : Controller
     {
         public IActionResult Dashboard()
+        {
+            return View();
+        }
+
+        public IActionResult Leads()
+        {
+            return View();
+        }
+
+        public IActionResult CreateLead()
         {
             return View();
         }

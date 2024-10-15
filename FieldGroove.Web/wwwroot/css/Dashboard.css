@@ -1,0 +1,11 @@
+﻿.hdTextTransparent{
+    opacity:0.5;
+}
+.hdcol{
+    background-color: #4a86ff;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+    content: ">";
+     
+}

@@ -94,14 +94,13 @@
                                             <input type="password" asp-for="@Model.PasswordAgain" class="form-control shadow-none border-dark" />
                                         </div>
 
-                                        <div>
-                                            <label asp-for="@Model.TimeZone" class=" form-label text-white">Time Zone* </label>
-                                            <select asp-for="@Model.TimeZone" class="form-control shadow-none border-dark">
-                                                <option value="">-- Select Time Zone --</option>
-                                                <option value="EST">Eastern Standard Time</option>
-                                                <option value="CST">Central Standard Time</option>
-                                                <option value="MST">Mountain Standard Time</option>
-                                                <option value="PST">Pacific Standard Time</option>
+                                        <div class="vstack">
+                                            <label asp-for="@Model.TimeZone" class="form-label text-white">Time Zone* </label>
+                                            <select asp-for="@Model.TimeZone" class="py-2 rounded-3">
+                                                <option>Eastern Standard Time</option>
+                                                <option>Central Standard Time</option>
+                                                <option>Mountain Standard Time</option>
+                                                <option>Pacific Standard Time</option>
                                             </select>
                                         </div>
                                         <div class="text-end">
